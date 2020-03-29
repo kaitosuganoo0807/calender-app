@@ -9,12 +9,14 @@ import dayjs from "dayjs";
 import "dayjs/locale/ja";
 
 import rootReducer from "./redux/rootReducer";
+import Navigation from "./components/Navigation/presentation";
 const store = createStore(rootReducer);
 
 dayjs.locale("ja");
 
 const App = () => (
   <Provider store={store}>
+    <Navigation />
     <CalendarBoard />
   </Provider>
 );
