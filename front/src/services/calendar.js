@@ -1,8 +1,8 @@
 import dayjs from "dayjs";
 
-export const createCalendar = () => {
+export const createCalendar = month => {
 
-  const firstDay = dayjs().startOf("month");
+  const firstDay = getMonth(month);
 
   const firstDayIndex = firstDay.day();
 
@@ -14,4 +14,8 @@ export const createCalendar = () => {
 
       return day;
     });
+};
+
+export const getMonth = ({ year, month }) => {
+  return dayjs(`${year}-${month}`);
 };
